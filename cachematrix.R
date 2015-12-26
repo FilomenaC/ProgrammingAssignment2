@@ -1,7 +1,7 @@
 ## Cachematrix consists of two separate functions: MakeCacheMatrix & cacheSolve
 
 ## MakeCacheMatrix function creates a special matrix object that can cache its inverse. 
-##It takes a square matrix as input and returns a list
+##It takes a square invertible matrix as input and returns a list
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL                              #inverse matrix initiated to zero 
@@ -30,7 +30,7 @@ cacheSolve <- function(x, ...) {
         }
         data <- x$get()                         #data gets the matrix stored with makeCacheMatrix 
         inv <- solve(data,...)                  #inv calculates the inverse of the matrix with solve function                         
-        x$setinv (inv)                          #x$setinv(inv) stores inverse matrix in the object generated assigned with makeCacheMatrix
-        inv
+        x$setinv (inv)                          #x$setinv(inv) stores inverse matrix in the object generated with makeCacheMatrix
+        inv                                     #return inverse matrix
         
 }
